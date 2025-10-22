@@ -97,6 +97,7 @@ def get_all_strings():
 
     # Query the database with filters
     results = storage.get_all(filters)
+    print(results)
 
     # Convert each object to dictionary
     data = []

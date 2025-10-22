@@ -50,8 +50,8 @@ class DBStorage:
         if filters:
             # Handle is_palindrome filter
             if 'is_palindrome' in filters:
-                val = 'true' if filters['is_palindrome'] else 'false'
-                query = query.filter(func.json_extract(StringAnalyzer.properties, '$.is_palindrome') == val)
+                val = 1 if filters['is_palindrome'] else 0
+                query = query.filter(cast(func.json_extract(StringAnalyzer.properties, '$.is_palindrome'), Integer) == val)
 
             # Handle min_length filter
             if 'min_length' in filters:
