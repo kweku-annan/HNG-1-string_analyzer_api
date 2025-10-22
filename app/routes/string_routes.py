@@ -177,7 +177,7 @@ def filter_by_natural_language():
         return jsonify({"error": "Query parsed but resulted in conflicting filters"}), 400
 
     # Convert each object to dictionary
-    data = [storage.to_dict() for obj in results]
+    data = [storage.to_dict(obj) for obj in results]
 
     # Build response
     response = {
