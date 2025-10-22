@@ -2,7 +2,7 @@
 """Databse Storage Schema using SQLAlchemy and SQLite"""
 import sqlite3
 
-from sqlalchemy import create_engine, Integer
+from sqlalchemy import create_engine, Integer, func, cast
 from sqlalchemy.orm import sessionmaker, scoped_session
 
 from app.models.string_analyzer import Base, StringAnalyzer
@@ -50,25 +50,25 @@ class DBStorage:
         if filters:
             # Handle is_palindrome filter
             if 'is_palindrome' in filters:
-                query = query.filter(
-                    StringAnalyzer.properties['is_palindrome'].astext == str(filters['is_palindrome']).lower()
-                )
+                val = 'true' if filters['is_palindrome'] else 'false'
+                query = query.filter(func.json_extract(StringAnalyzer.properties, '$.is_palindrome') == val)
 
             # Handle min_length filter
             if 'min_length' in filters:
                 query = query.filter(
-                    StringAnalyzer.properties['length'].astext.cast(Integer) >= filters['min_length']
+                    cast(func.json_extract(StringAnalyzer.properties, '$.length'), Integer) >= filters['min_length']
                 )
 
             # Handle max_length filter
             if 'max_length' in filters:
                 query = query.filter(
-                    StringAnalyzer.properties['length'].astext.cast(Integer) <= filters['max_length']
+                    cast(func.json_extract(StringAnalyzer.properties, '$.length'), Integer) <= filters['max_length']
                 )
 
             # Handle word_count filter
             if 'word_count' in filters:
-                query = query.filter(StringAnalyzer.properties['word_count'].astext == str(filters['word_count'])
+                query = query.filter(
+                    cast(func.json_extract(StringAnalyzer.properties, '$.word_count'), Integer) == filters['word_count']
                 )
 
             # Handle contains_character filter
@@ -93,7 +93,7 @@ class DBStorage:
             'id': obj.id,
             'value': obj.value,
             'properties': obj.properties,
-            'created_at': obj.created_at.isoformat()
+            'created_at': obj.created_at
         }
 
 

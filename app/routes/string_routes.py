@@ -40,7 +40,7 @@ def get_string(value):
     string_record = storage.get_by_value(value)
     if not string_record:
         return jsonify({"4o4 Not Found": "String does not exist in the system"}), 404
-    return jsonify(string_record.to_dict()), 200
+    return jsonify(storage.to_dict(string_record)), 200
 
 # Get all strings with filtering
 @string_bp.route('/strings', methods=['GET'])
