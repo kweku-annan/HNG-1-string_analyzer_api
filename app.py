@@ -1,5 +1,4 @@
 from flask import Flask, jsonify
-from api.models.string_analyzer import StringAnalyzer
 from api.schemas.dbStorage import DBStorage
 from api.routes.string_routes import string_bp
 

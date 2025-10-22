@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 """Databse Storage Schema using SQLAlchemy and SQLite"""
-import sqlite3
-
 from sqlalchemy import create_engine, Integer, func, cast
 from sqlalchemy.orm import sessionmaker, scoped_session
 

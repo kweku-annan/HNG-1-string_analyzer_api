@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 """String Helper Functions"""
-import string
 
 def calculate_length(input_string: str) -> int:
     """Calculates the number of visible characters excluding whitespaces, non-printables, and punctuations"""

@@ -1,10 +1,6 @@
 #!/usr/bin/env python
 """Defines routes for string analysis operations."""
-from crypt import methods
-
 from flask import Blueprint, request, jsonify
-from requests.utils import parse_dict_header
-
 from api.models.string_analyzer import StringAnalyzer
 
 from api.schemas.dbStorage import DBStorage
