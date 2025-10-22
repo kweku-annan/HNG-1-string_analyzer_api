@@ -1,10 +1,10 @@
 from flask import Flask, jsonify
-from app.models.string_analyzer import StringAnalyzer
-from app.schemas.dbStorage import DBStorage
-from app.routes.string_routes import string_bp
+from api.models.string_analyzer import StringAnalyzer
+from api.schemas.dbStorage import DBStorage
+from api.routes.string_routes import string_bp
 
 
-# Create Flask app
+# Create Flask api
 app = Flask(__name__)
 
 # Initialize storage
@@ -19,5 +19,5 @@ def home():
     return jsonify({"message": "Welcome to String Analyzer API!"}), 200
 
 # if __name__ == "__main__":
-#     app.run(debug=True)
+#     api.run(debug=True)
 

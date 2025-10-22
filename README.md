@@ -107,7 +107,7 @@ string-analyzer-api/
 
 2. **Run the Flask application:**
 ```bash
-   python app.py
+   python api.py
 ```
 
 3. **The API will be available at:**
@@ -434,7 +434,7 @@ For production deployments, use Gunicorn instead of Flask's development server:
 
 3. **Or run manually:**
 ```bash
-   gunicorn --bind 0.0.0.0:5000 app:app
+   gunicorn --bind 0.0.0.0:5000 api:api
 ```
 
 ### Database Considerations

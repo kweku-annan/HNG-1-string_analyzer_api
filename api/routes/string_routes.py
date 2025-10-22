@@ -5,10 +5,10 @@ from crypt import methods
 from flask import Blueprint, request, jsonify
 from requests.utils import parse_dict_header
 
-from app.models.string_analyzer import StringAnalyzer
+from api.models.string_analyzer import StringAnalyzer
 
-from app.schemas.dbStorage import DBStorage
-from app.utils.analysis_helper import generate_sha256_hash, string_properties_summary, word_count
+from api.schemas.dbStorage import DBStorage
+from api.utils.analysis_helper import generate_sha256_hash, string_properties_summary, word_count
 
 string_bp = Blueprint('string_analysis', __name__)
 storage = DBStorage()

@@ -5,7 +5,7 @@ import sqlite3
 from sqlalchemy import create_engine, Integer, func, cast
 from sqlalchemy.orm import sessionmaker, scoped_session
 
-from app.models.string_analyzer import Base, StringAnalyzer
+from api.models.string_analyzer import Base, StringAnalyzer
 
 
 class DBStorage:
