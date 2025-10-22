@@ -479,12 +479,13 @@ This project is part of the Backend Wizards Stage 1 Task.
 
 ## Author
 
-[Your Name]  
-[Your Email]  
-[Your GitHub Profile]
+[Emmanuel Saah](https://www.linkedin.com/in/emmanuel-saah)  
+[Email](kwekuannan.dev@gmail.com)  
+[GitHub](https://www.github.com/kweku-annan)
+
 
 ## Acknowledgments
 
-- Backend Wizards Program
-- Flask Documentation
-- SQLAlchemy Documentation
+- [HNG Internship Program](https://hng.tech/)
+- [Flask Documentation](https://flask.palletsprojects.com/)
+- [SQLAlchemy Documentation](https://www.sqlalchemy.org/)

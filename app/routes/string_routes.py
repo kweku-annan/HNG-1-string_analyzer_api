@@ -133,11 +133,11 @@ def filter_by_natural_language():
             parsed_filters['is_palindrome'] = True
 
     # Check for word count
-    if 'word' or 'single word' or 'one word' or '1 word' in query_lower:
+    if 'word' in query_lower or 'single word' in query_lower or 'one word' in query_lower or '1 word' in query_lower:
         parsed_filters['word_count'] = 1
-    elif 'two words' or '2 words' in query_lower:
+    elif 'two words' in query_lower or '2 words' in query_lower:
         parsed_filters['word_count'] = 2
-    elif 'three words' or '3 words' in query_lower:
+    elif 'three words' in query_lower or '3 words' in query_lower:
         parsed_filters['word_count'] = 3
     elif 'multiple words' in query_lower:
         parsed_filters['word_count'] = 'multiple'
