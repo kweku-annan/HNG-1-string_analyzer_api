@@ -18,6 +18,6 @@ app.register_blueprint(string_bp)
 def home():
     return jsonify({"message": "Welcome to String Analyzer API!"}), 200
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
 
