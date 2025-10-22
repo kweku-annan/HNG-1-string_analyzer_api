@@ -194,7 +194,7 @@ def filter_by_natural_language():
 def delete_string(value):
     """Deletes a string analysis record by its value"""
     # Check if the string exists
-    string_record = storage.get_by_value(value)
+    string_record = value
     if not string_record:
         return jsonify({"404 Not Found": "String does not exist in the system"}), 404
 
