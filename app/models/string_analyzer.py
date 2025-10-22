@@ -11,7 +11,7 @@ class StringAnalyzer(Base):
     __tablename__ = 'string_analyzers'
 
     id = Column(String(60), primary_key=True, nullable=False)
-    value = Column(String(255), nullable=False)
+    value = Column(String(256), nullable=False)
     properties = Column(JSON, nullable=False)
     created_at = Column(DateTime, nullable=False)
 
